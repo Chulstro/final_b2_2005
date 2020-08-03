@@ -1,5 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Passenger, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "Validations" do
+    it {should validate_presence_of :name}
+    it {should validate_presence_of :age}
+  end
+
+  describe "Relationships" do
+    it {should belong_to :flight}
+  end
 end
