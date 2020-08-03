@@ -4,6 +4,7 @@ RSpec.describe Flight, type: :model do
   describe "Validations" do
     it {should validate_presence_of :number}
     it {should validate_presence_of :date}
+    it {should validate_presence_of :time}
     it {should validate_presence_of :departure_city}
     it {should validate_presence_of :arrival_city}
   end
@@ -17,7 +18,7 @@ RSpec.describe Flight, type: :model do
   describe "Methods" do
     before :each do
       airline_1 = Airline.create(name: "Totally not Falling")
-      @flight_1 = airline_1.flights.create(number: 12, date: "08/24/2020", departure_city: "Los Angeles", arrival_city: "Portland")
+      @flight_1 = airline_1.flights.create(number: 12, date: "08/24/2020", time: "4:00 PM PDT", departure_city: "Los Angeles", arrival_city: "Portland")
       @flight_1.passengers.create(name: "Jerrod", age: 14)
       @flight_1.passengers.create(name: "Jennine", age: 24)
       @flight_1.passengers.create(name: "Harold", age: 34)
