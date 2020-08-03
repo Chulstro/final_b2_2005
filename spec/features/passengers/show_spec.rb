@@ -11,7 +11,7 @@ RSpec.describe "When I visit a passengers show page" do
   end
 
   it "shows all the passengers flights and their info" do
-    visit "/passengers/#{@passenger_1}"
+    visit "/passengers/#{@passenger_1.id}"
 
     expect(page).to have_content(@passenger_1.name)
     expect(page).to have_content(@passenger_1.age)
