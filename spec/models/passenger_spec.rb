@@ -7,6 +7,7 @@ RSpec.describe Passenger, type: :model do
   end
 
   describe "Relationships" do
-    it {should belong_to :flight}
+    it {should have_many :passenger_flights}
+    it {should have_many(:flights).through(:passenger_flights)}
   end
 end
